@@ -1,12 +1,23 @@
 import styled from 'styled-components'
 import { cores } from '../../styles'
 import { TagContainer } from '../Tag/styles'
+import { Link } from 'react-router-dom'
 
-export const Card = styled.div`
+export const Card = styled(Link)`
   background-color: ${cores.cinza};
   border-radius: 8px;
   padding: 8px;
   position: relative;
+  text-decoration: none;
+  color: ${cores.branca};
+  display: block;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
 
   ${TagContainer} {
     margin-right: 8px;
@@ -24,6 +35,12 @@ export const Descricao = styled.p`
   line-height: 22px;
   display: block;
   margin-top: 16px;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `
 
 export const Infos = styled.div`
